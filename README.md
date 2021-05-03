@@ -9,6 +9,11 @@
 ## Contenido
 - [General](#General)
   - [Information Ghatering](#Information-Ghatering)
+  - 
+  - [Crackeando hashes]
+    - [Hashcat](#Hashcat)
+    - [John the Ripper](#John-the-Ripper)
+    - [Aplicando Reglas (ver delivery)](#Aplicando Reglas)
 - [Linux](#Linux)  
   - [Reverse shells](#Reverse-shells) 
     - [Bash](#Bash)
@@ -19,6 +24,12 @@
     - [War msfvenom (tomcat manager)](#War)
     - [Groovy (Jenkins console)](#Groovy-(Jenkins-Console)
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
+  - [Privilege Escalation](#Privilege-Escalation) 
+  - [Escapando de Docker](#Escapando-de-Docker)
+    - [Forma 1 ver ready]
+    - [Forma 2 ver feline]
+    - [Forma 3 ver tnb]
+    - [Forma 3 ver final de reddish]
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
       - [Python](#Python_t)
@@ -32,8 +43,8 @@
     - [FTP](#FTP)
     - [SCP](#SCP)
     - [Samba](#Samba)
-   
-  - Bypassing restricted shells (rbash , rzsh,etc)    
+  - [Bypassing de restricciones al inyectar comandos](#Bypassing-de-restricciones-al-inyectar-comandos)
+  - [Bypassing restricted shells (rbash , rzsh,etc)](#Bypassing-restricted-shells-(rbash,rzsh,etc))    
 - [Windows](#Windows)
 - 
 - [Reverse Shell]
