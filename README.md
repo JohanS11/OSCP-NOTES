@@ -23,7 +23,7 @@
     - [Curl](#Curl)
     - [Wget](#Wget)
     - [NetCat](#NetCat_t)
-    - [/dev/tcp/](#/dev/tcp)
+    - [/dev/tcp/](#Dev-tcp)
     - [FTP](#FTP)
     - [SCP](#SCP)
     - [Samba](#Samba)
@@ -120,7 +120,7 @@ Técnicas para utilizar en sistemas basados en unix
   target -> nc -lvp 4444 > FileToTransfer
   source -> nc targetip 4444 -w 3 < FileToTransfer (w representa un tiempo de espera en seg para archivos muy grandes)
   ```
-### /dev/tcp
+### Dev tcp
   ```bash
   target -> nc -lvp 4444 > FileToTransfer
   cat FileToTransfer > /dev/tcp/targetip/4444 
