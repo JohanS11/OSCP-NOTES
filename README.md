@@ -9,19 +9,25 @@
 ## Contenido
 - [General](#General)
   - [Information Ghatering](#Information-Ghatering)
-  - [Web]
+  - [Web](#Web)
     - [Webshells](#Webshells)
     - [LFI](#LFI)
     - [LFI TO RCE](#LFI-TO-RCE)
     - [RFI](#RFI)
     - [JWT](#JWT)
-      -[WEAK SECRET](#WEAK-SECRET)
-      -[PUBLIC KEY](#PUBLIC-key)
+      - [WEAK SECRET](#WEAK-SECRET)
+      - [PUBLIC KEY](#PUBLIC-key)
     - [SQLi]
   - [Crackeando hashes]
     - [Hashcat](#Hashcat)
     - [John the Ripper](#John-the-Ripper)
     - [Aplicando Reglas (ver delivery)](#Aplicando-Reglas)
+  - [Port Forwarding/ Port Tunneling](#Port-Forwarding)
+    - [Chisel](#Chisel)
+    - [Plink](#Plink)
+    - [Ncat](#Ncat)
+    - [SSH](#SSH)
+    - [Metasploit](#Metasploit)
 - [Linux](#Linux)  
   - [Reverse shells](#Reverse-shells) 
     - [Bash](#Bash)
