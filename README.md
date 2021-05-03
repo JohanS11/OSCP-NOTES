@@ -17,7 +17,7 @@
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
       - [Python](#Python_t)
-      - [Python3](#Python3_t)
+      - [Python3](#Python3)
       - [Apache](#Apache)
       - [Php](#PHP_t)
     - [Curl](#Curl)
