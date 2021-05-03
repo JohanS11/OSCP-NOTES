@@ -14,7 +14,20 @@
     - [Python](#Python)
     - [PHP](#PHP)
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
-  - [Files]  
+  - [Transferencia de Archivos](#Transfiriendo-Archivos)
+    - [HTTP](#HTTP)
+      - [Python](#Python)
+      - [Python3](#Python)
+      - [Apache](#Python)
+      - [Php](#Php)
+    - [Curl](#Curl)
+    - [Wget](#Wget)
+    - [NetCat](#NetCat)
+    - [/dev/tcp/](#/dev/tcp)
+    - [FTP](#FTP)
+    - [SCP](#SCP)
+    - [Samba](#Samba)
+   
   - Bypassing restricted shells (rbash , rzsh,etc)    
 - [Windows](#Windows)
 - 
@@ -73,3 +86,6 @@ Técnicas para utilizar en sistemas basados en unix
       export SHELL=bash
       alias ll='ls -lsaht –color=auto'
   ```
+## Transfiriendo archivos
+
+ 
