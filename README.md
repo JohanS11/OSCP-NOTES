@@ -7,14 +7,17 @@
 **Curso: Penetration Testing with Kali Linux (PEN-200)**
 
 ## Contenido
+- [General](#General)
+  - [Information Ghatering](#Information Ghatering)
 - [Linux](#Linux)  
   - [Reverse shells](#Reverse-shells) 
     - [Bash](#Bash)
     - [Netcat](#Netcat)   
     - [Python](#Python)
     - [PHP](#PHP)
-    - [PHP](#Perl)
-    - [War msfvenom](#War)
+    - [Perl](#Perl)
+    - [War msfvenom (tomcat manager)](#War)
+    - [Groovy (Jenkins console)](#
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
