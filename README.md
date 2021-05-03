@@ -8,7 +8,7 @@
 
 ## Contenido
 - [General](#General)
-  - [Information Ghatering](#Information Ghatering)
+  - [Information Ghatering](#Information-Ghatering)
 - [Linux](#Linux)  
   - [Reverse shells](#Reverse-shells) 
     - [Bash](#Bash)
@@ -17,7 +17,7 @@
     - [PHP](#PHP)
     - [Perl](#Perl)
     - [War msfvenom (tomcat manager)](#War)
-    - [Groovy (Jenkins console)](#
+    - [Groovy (Jenkins console)](#Groovy-(Jenkins-Console)
   - [Spawneando una shell mejor](#Spawning-a-TTY-shell)   
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
