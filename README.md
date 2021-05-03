@@ -9,11 +9,17 @@
 ## Contenido
 - [General](#General)
   - [Information Ghatering](#Information-Ghatering)
-  - [Web](#Web)
+    - [Port Scanning](#Port-Scanning)
+    - 
+  - [Pentesting Web](#Pentesting-Web)
     - [Webshells](#Webshells)
     - [LFI](#LFI)
     - [LFI TO RCE](#LFI-TO-RCE)
     - [RFI](#RFI)
+    - [Wordpress](#Wordpress)
+      - [Encontrando plugins]
+      - [xmlrpc goes wild]
+    - [Shellshock](#Shellshock)
     - [JWT](#JWT)
       - [WEAK SECRET](#WEAK-SECRET)
       - [PUBLIC KEY](#PUBLIC-key)
