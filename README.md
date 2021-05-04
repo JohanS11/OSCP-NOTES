@@ -50,7 +50,7 @@
     - [Forma 1 ver ready]
     - [Forma 2 ver feline]
     - [Forma 3 ver tnb]
-    - [Forma 3 ver final de reddish]
+    - [Forma 4 ver final de reddish]
   - [Transferencia de Archivos](#Transfiriendo-Archivos)
     - [HTTP](#HTTP)
       - [Python](#Python_t)
