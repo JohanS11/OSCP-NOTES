@@ -21,9 +21,9 @@ Técnicas utilizadas para escalar privilegios en sistemas basados en Windows.
   - [SeBackupPrivilege & SeRestorePrivilege](#SeBackupPrivilege-And-SeRestorePrivilege)
 - [Privileged Groups](#whoami-groups)
 - [Servicios Vulnerables](#Servicios-Vulnerables)
-  - [Insecure Permissions](#Insecure Permissions)
-  - [Unquoted Service Path](#Unquoted Service Path)
-  - [Weak Registry Permissions](#Weak Registry Permissions)
+  - [Insecure Permissions](#Insecure-Permissions)
+  - [Unquoted Service Path](#Unquoted-Service Path)
+  - [Weak Registry Permissions](#Weak-Registry Permissions)
 
 ## whoami priv
 
