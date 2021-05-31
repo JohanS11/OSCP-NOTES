@@ -103,6 +103,40 @@ impacket-secretsdump -ntds ndts.dit -system system -hashes lmhash:nthash LOCAL
 ***HTB Machine*** : **Resolute**
 
 
+## Servicios Vulnerables
+
+**Obtener lista de servicios**
+
+```cmd
+net start
+wmic service list brief
+sc query
+Get-Service
+```
+**Obtener permisos del servicio**
+
+```cmd
+sc qc <service_name>
+accesschk.exe -ucqv <Service_Name> #Check rights for different groups
+```
+
+**Ver si Authenticated Users pueden modificar el servicio**
+
+```cmd
+accesschk.exe -uwcqv "Authenticated Users" * /accepteula
+accesschk.exe -uwcqv %USERNAME% * /accepteula
+accesschk.exe -uwcqv "BUILTIN\Users" * /accepteula 2>nul
+accesschk.exe -uwcqv "Todos" * /accepteula ::Spanish version
+```
+
+### Insecure Permissions daclsvc
+
+**Usando accesschk.exe para verificar los permisos del usuario actual sobre un servicio en específico**
+```cmd
+.\accesschk.exe /accepteula -uwcqv <user> daclsvc
+```
+
+
 
 
 
