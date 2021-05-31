@@ -24,6 +24,7 @@ Técnicas utilizadas para escalar privilegios en sistemas basados en Windows.
   - [Insecure Permissions](#Insecure-Permissions)
   - [Unquoted Service Path](#Unquoted-Service-Path)
   - [Weak Registry Permissions](#Weak-Registry-Permissions)
+  - [Insecure Service Executables](#Insecure-Service-Executables)
 
 ## whoami priv
 
