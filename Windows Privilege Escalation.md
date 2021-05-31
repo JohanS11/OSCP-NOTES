@@ -109,6 +109,8 @@ impacket-secretsdump -ntds ndts.dit -system system -hashes lmhash:nthash LOCAL
 
 ## Servicios Vulnerables
 
+[Guia Hacktricks](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation#services)
+
 **Obtener lista de servicios**
 
 ```cmd
