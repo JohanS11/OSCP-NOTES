@@ -23,7 +23,8 @@
     - [JWT](#JWT)
       - [WEAK SECRET](#WEAK-SECRET)
       - [PUBLIC KEY](#PUBLIC-key)
-    - [SQLi]
+    - [SQLi](#SQLI)
+      - [Blind SQLI](#BLIND-sqli)
   - [Crackeando hashes]
     - [Hashcat](#Hashcat)
     - [John the Ripper](#John-the-Ripper)
@@ -67,7 +68,8 @@
   - [Bypassing de restricciones al inyectar comandos](#Bypassing-de-restricciones-al-inyectar-comandos)
   - [Bypassing restricted shells (rbash , rzsh,etc)](#Bypassing-restricted-shells-(rbash,rzsh,etc))    
 - [Windows](#Windows)
-- 
+- [Privilege Escalation - Linux](https://github.com/JohanS11/OSCP-NOTES/blob/main/Linux%20Privilege%20Escalation.md)
+- [Privilege Escalation - Windows](https://github.com/JohanS11/OSCP-NOTES/blob/main/Windows%20Privilege%20Escalation.md)
 - [Reverse Shell]
 
 Linux 
