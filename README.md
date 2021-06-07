@@ -78,6 +78,8 @@ Técnicas para utilizar en sistemas basados en unix
 
 ### Reverse shells
 
+[Reverse shell UNIX Generator](https://resh.now.sh/yourip:1337)
+
 [Reverse shell generator](https://www.revshells.com/)
 
 ### Reverse shell comúnes
